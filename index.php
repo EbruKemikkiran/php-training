@@ -1,3 +1,34 @@
+<?php
+
+$categories = ["Software Deeveloping", "Web Developing", "Mobile Developing"];
+$courses = [
+[
+    "id"=> 1,
+    "title" => "Software Development",
+    "description" => "bla bla bla",
+    "image" => "project-img4.jpg",
+    "approved" => true
+],
+[
+    "id"=> 2,
+    "title" => "Web Development",
+    "description" => "bla bla bla",
+    "image" => "project-img1.jpg",
+    "approved" => ""
+],
+[
+    "id"=> 3,
+    "title" => "Mobile Development",
+    "description" => "bla bla bla",
+    "image" => "projecdt-img2.jpg",
+    "approved" => ""
+]
+];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,65 +57,51 @@
     </div>
 </nav>
 
-<div class="container">
-    <div class="row"></div>
-        <div class="col-4">
+<div class="container my-3">
+    <div class="row">        
+        <div class="col-3">
+
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Software Developer</a>
-                <a href="#" class="list-group-item list-group-item-action">Web Developer</a>
-                <a href="#" class="list-group-item list-group-item-action">Mobile Developer</a>
-
+                <?php  for($i = 0; $i < count($categories); $i++): ?>
+                <a href="#" class="list-group-item list-group-item-action"><?php echo $categories[$i]; ?></a>
+                <?php endfor; ?>
             </div>
-
         </div>
+       
         <div class="col-9">
+            <?php foreach($courses as $course): ?>
+                <?php if($course["approved"]): ?>
+
             <div class="card mb-3">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="img/project-img4.jpg" alt="" class="img-fluid rounded-start">
+                        
+                        <img src="img/<?php echo $course['image'] ?>" class="img-fluid rounded-start">
                     </div>
-                    <div class="com-md-8">
-                        <h5 class="card-title">Web Developing</h5>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque incidunt corporis aliquam id amet quo adipisci a voluptas officia cupiditate enim mollitia suscipit, consequatur rem nihil natus unde eos totam!
-                        </p>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-9">
-            <div class="card mb-3">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="img/project-img1.jpg" alt="" class="img-fluid rounded-start">
-                    </div>
                     <div class="com-md-8">
-                        <h5 class="card-title">Software Developing</h5>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque incidunt corporis aliquam id amet quo adipisci a voluptas officia cupiditate enim mollitia suscipit, consequatur rem nihil natus unde eos totam!
-                        </p>
+                        <div class="row">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <?php echo $course["title"] ?>
+                                </h5>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-9">
-            <div class="card mb-3">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="img/projecdt-img2.jpg" alt="" class="img-fluid rounded-start">
-                    </div>
-                    <div class="com-md-8">
-                        <h5 class="card-title">Mobile Developing</h5>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque incidunt corporis aliquam id amet quo adipisci a voluptas officia cupiditate enim mollitia suscipit, consequatur rem nihil natus unde eos totam!
-                        </p>
+                                <p>
+                                <?php echo $course["description"] ?>
+                                </p>
 
-                    </div>
-                </div>
-            </div>
+                            </div>
+                        </div>
+                    </div>        
+                </div> 
+            </div> 
+            <?php endif; ?>
+            <?php endforeach; ?>  
+             
         </div>
+
+
+    </div>
 </div>
 
 
