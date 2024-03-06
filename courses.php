@@ -13,7 +13,7 @@
         </div>      
         <div class="col-9">
             <?php foreach($courses as $course): ?>
-                <?php if($course["approved"] and $course["index"]): ?>
+                <?php if($course != ["index"]): ?>
 
                     <?php include('partials/_course.php')?>
                 <?php endif; ?>
