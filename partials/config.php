@@ -19,17 +19,4 @@ if(mysqli_connect_errno() > 0)
 }
 
 
-echo "connected.";
-
-mysqli_close($connect);
-
-echo "connection closed";
-
-
-
-
-
-
-
-
 ?>
