@@ -9,7 +9,10 @@
                         <div class="row">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <?php echo $course["title"] ?>
+                                    <a href="courseDetails.php?id=<?php echo $course["id"];?>">
+                                    <?php echo $course["title"];?>
+                                </a>
+                                    
                                 </h5>
 
                                 <p>
