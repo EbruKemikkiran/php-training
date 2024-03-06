@@ -1,5 +1,5 @@
 
-<?php include('partials/_db.php')?>
+<?php require_once('config.php')?>
 <?php include('partials/_header.php')?>
 <?php include('partials/_navbar.php')?>
     
